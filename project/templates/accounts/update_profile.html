@@ -5,6 +5,7 @@
     {% csrf_token %}
     {{user_form}}
     {{profile_form}}
+    <a href="{% url 'pass_change' %}" class="btn btn-warning text-capitalize">update password</a>
     <input type="submit" value={{title}}>
 </form>
 {% endblock %}

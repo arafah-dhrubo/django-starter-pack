@@ -1,9 +1,46 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block title %}{{user.username}}{% endblock %}
 {% block content %}
-<h3>{{user.first_name}} {{user.last_name}}</h3>
-<h3>{{user.email}}</h3>
-<h3>{{user.last_login}}</h3>
-<h3>{{user.username}}</h3>
-<img src="{{user.profile.profile_pic.url}}" alt="">
+<div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between mb-5">
+        <h1>Profile</h1>
+        <div>
+            <a class="btn btn-warning" href="{% url 'update_profile' %}">Update Profile</a>
+            <a href="" class="btn btn-danger">Delete Account</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-4 text-center card">
+            <div class="card-body">
+                {% if request.user.profile.image %}
+                <img src="{{user.profile.profile_pic.url}}" alt="image" class="img-thumbnail">
+                {% else %}
+                <img src="{% static 'images/dummy-profile.png'%}" alt="dummy-image" class="img-fluid">
+                {% endif %}
+            </div>
+            <div class="card-footer"><h3>{{request.user.username}}</h3></div>
+        </div>
+        <div class="col-12 col-md-8 col-lg-8">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th scope="row">ID</th>
+                    <td scope="row">{{request.user.id}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Name</th>
+                    <td scope="row">{{request.user.first_name}} {{request.user.last_name}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</th>
+                    <td scope="row">{{request.user.email}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date Joined</th>
+                    <td scope="row">{{request.user.date_joined}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

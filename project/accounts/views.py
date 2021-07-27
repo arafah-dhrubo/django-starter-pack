@@ -1,6 +1,7 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 from accounts.forms import CreateUserForm, LoginForm
 from accounts.models import Profile
@@ -19,10 +20,10 @@ def register(request):
                 user = form.cleaned_data.get['username']
                 messages.success(request, 'Congratulations ' + user + ' Account created successfully')
                 return redirect("/")
-        title="Create Account"
+        title = "Create Account"
         context = {
             'form': form,
-            'title':title
+            'title': title
         }
         return render(request, 'accounts/form.html', context)
 
@@ -38,18 +39,25 @@ def login_page(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, request.user.username + ' Logged in Successfully')
                 return redirect('/')
             else:
                 messages.error(request, 'Wrong username or password')
-                return redirect('/')
+                return redirect('login')
         title = "Login"
-        context={
-            'title':title,
+        context = {
+            'title': title,
         }
         return render(request, 'accounts/login.html', context)
 
 
-@login_required(login_url='login')
+def logout_page(request):
+    user=request.user.username
+    logout(request)
+    messages.success(request, user + ' Logged out Successfully')
+    return redirect('/')
+
+@login_required
 def profile(request):
     user = request.user
     context = {
@@ -58,7 +66,7 @@ def profile(request):
     return render(request, 'accounts/profile.html', context)
 
 
-@login_required(login_url='login')
+@login_required
 def update_profile(request):
     profile = Profile.objects.filter(user=request.user).first()
     if request.method == 'POST':
@@ -77,10 +85,27 @@ def update_profile(request):
     else:
         user_form = UpdateUser(instance=request.user)
         profile_form = UpdateProfile(instance=profile)
-        title="Update Profile"
+        title = "Update Profile"
         context = {
             'user_form': user_form,
             'profile_form': profile_form,
-            'title':title
+            'title': title
         }
         return render(request, 'accounts/update_profile.html', context)
+
+
+def pass_change(request):
+    current_user = request.user
+    form = PasswordChangeForm(current_user)
+    if request.method == 'POST':
+        form = PasswordChangeForm(current_user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "your password has been updated")
+            return redirect('profile')
+    title = "Update Password"
+    context = {
+        'form': form,
+        'title': title
+    }
+    return render(request, 'accounts/form.html', context)

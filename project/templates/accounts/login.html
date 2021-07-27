@@ -4,10 +4,11 @@
 {% block content %}
 <form action="" method="post">
     {% csrf_token %}
-    <label for="username">Username:</label><br>
-    <input type="text" name="username" placeholder="John_Doe"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" name="password" placeholder="Your password"><br>
+    <label for="username" class="form-label">Username:</label><br>
+    <input type="text" class="form-control"  name="username" placeholder="John_Doe"><br>
+    <label for="password" class="form-label">Password:</label><br>
+    <input type="password" class="form-control"
+     name="password" placeholder="Your password"><br>
     <input type="submit" value="I'm in"><br>
 </form>
 {% endblock %}

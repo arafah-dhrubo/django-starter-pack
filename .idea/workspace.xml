@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc1a5364-c3e3-41d2-81cb-17044abf605a" name="Default Changelist" comment="" />
+    <list default="true" id="cc1a5364-c3e3-41d2-81cb-17044abf605a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/static/images/dummy-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/base/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/image/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/accounts/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/accounts/update_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/accounts/update_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/base/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/base/navbar.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +45,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/static/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\django-starter-pack\project\static\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\GitHub\django-starter-pack\project\templates\base" />
     </key>
@@ -69,11 +88,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627199516485</updated>
-      <workItem from="1627199522446" duration="8459000" />
+      <workItem from="1627199522446" duration="9943000" />
+      <workItem from="1627352124799" duration="5223000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
